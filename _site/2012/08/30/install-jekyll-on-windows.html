@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>在Windows下安装Jekyll | DongFang's Blog</title>
+  <meta name="generator" content="Jekyll" />
+  <meta name="author" content="Liu Dongfang" />
+  
+  <meta name="description" content="记录我的安装过程。" />
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
+  <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+  <script>
+  (function() {
+    var cx = '015994199171737318560:lu0dt9txvlq';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+  </script>
+</head>
+<body>
+    <header class="head">
+	<div class="header fn-clear">
+		<section class="header-cnt fn-clear">
+			<div class="logo">
+				<div class="logo-cnt">
+				 	<h1><a href="/">DongFang's Blog</a></h1>
+				 	<h2>Program, Economy & Life.</h2>
+				</div>
+			</div>
+			<nav class="nav">
+				<ul>
+					<li><a href="/" >Home</a></li>
+					<li><a href="/archives.html" >Archives</a></li>
+					<li><a href="/contact.html" >About & Contact</a></li>
+					<li><a href="/atom.xml" target="_blank" >Rss</a></li>
+				</ul>
+			</nav>
+		</section>
+	</div>
+</header> 
+    <section id="content">
+        <article id="contenter">
+            <section class="content">
+	<div class="content-cnt fn-clear">
+		<div class="main fn-clear">
+			<article class="entry">
+				<h1 class="title">在Windows下安装Jekyll</h1>
+               	<p class="meta">
+                    <time class="date" pubdate="2012-08-30">30 Aug 2012</time> By
+                    
+                        <a href="/contact.html" class="author" title="author">Liu Dongfang</a>
+                    
+                    <g:plusone size="small"></g:plusone>
+                </p>
+               	<p class="description">记录我的安装过程。</p>
+ 			 	<h1>1. 安装Ruby</h1>
+
+<ol>
+<li>从 <a href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a> 下载最新的Ruby版本： <a href="http://files.rubyforge.vm.bytemark.co.uk/rubyinstaller/rubyinstaller-1.9.3-p194.exe">rubyinstaller-1.9.3-p194.exe</a>
+和 <a href="https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe</a></li>
+<li>执行 rubyinstaller-1.9.3-p194.exe， 假设安装在 c:\ruby193 目录， 安装时需要选择"Add Ruby executables to your PATH"</li>
+<li>执行 DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe， 设置解压目录为 c:\RubyDevKit</li>
+<li>进入 c:\RubyDevKit 目录，执行 ruby dk.rb init 和 ruby dk.rb install</li>
+</ol>
+
+
+<h1>2. 安装Jekyll</h1>
+
+<p>在bash窗口下执行</p>
+
+<div class="highlight"><pre><code class="bash">gem install jekyll -v 0.11.0
+gem install liquid -v 2.2.2
+gem install rdiscount kramdown
+</code></pre>
+</div>
+
+
+<p>然后就可以开始我们的Jekyll之旅了。</p>
+
+<p>注意：Jekyll 和 都必须安装和 github 一样的版本，否则可能出现本地可以正常显示，但上传到 github 上后，github不更新的情况。</p>
+
+<p>我就遇到过一次，在咨询 github 工作人员后才知道这一点。</p>
+
+<p>上面命令中的版本是我写本文时 github 所使用的版本。github所使用的版本情况可以在 <a href="https://help.github.com/articles/using-jekyll-with-pages">Using Jekyll with Pages</a> 中查看。</p>
+
+<p>通过 <code>gem list</code> 查看本地安装的版本，如果已经安装了其它版本的 jekyll 或 liquid, 可以通过如下命令删除</p>
+
+<div class="highlight"><pre><code class="bash">gem uninstall jekyll
+gem uninstall liquid
+</code></pre>
+</div>
+
+
+<p>删除时，可以通过 -v 参数指定所要删除的版本号。</p>
+
+<p>如果不删除，会出现诸如</p>
+
+<pre>
+ Liquid error: undefined method `join' for ...
+</pre>
+
+
+<p>这样的错误。</p>
+
+<h1>3. 安装 Pygments</h1>
+
+<p>安装 Pygments 是为了在Blog中能够实现代码高亮。如果不需要在Blog中写代码片段，可以不用安装 Pygments, 跳过本章节。</p>
+
+<h2>3.1 安装</h2>
+
+<ol>
+<li>安装Python: 从 <a href="http://www.python.org/getit/">Phthon网站</a>下载并安装 <a href="http://www.python.org/ftp/python/2.7.3/python-2.7.3.msi">python-2.7.3.msi</a> （或更高版本的 python-2.x.x）, 假设安装在 c:\Python27 目录</li>
+<li>安装easy_install: 从<a href="http://pypi.python.org/pypi">http://pypi.python.org/pypi</a>下载并安装 <a href="http://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11.win32-py2.7.exe#md5=57e1e64f6b7c7f1d2eddfc9746bbaf20">setuptools-0.6c11.win32-py2.7.exe</a></li>
+<li>安装 Pygments: 执行下命令</li>
+</ol>
+
+
+<div class="highlight"><pre><code class="bat"><span class="k">cd</span> c:\Python<span class="m">27</span>\Scripts\
+easy_install Pygments
+</code></pre>
+</div>
+
+
+<p>最后再将 c:\Python27\Scripts\ 添加到环境变量 PATH 中。</p>
+
+<h2>3.2. 打补丁</h2>
+
+<p>参考下面的链接为Ruby打补丁，防止出现“Liquid error: bad file descriptor”错误。</p>
+
+<ul>
+<li><a href="https://gist.github.com/1185645">https://gist.github.com/1185645</a></li>
+</ul>
+
+
+<p>也可以直接下载我修改后的文件 <a href="/attachments/albino.rb">albino.rb</a> 。注意：使用“另存为”来下载。</p>
+
+<h2>3.3 生成 css 文件</h2>
+
+<p>为了在博客中使用Pygments， 还需要生成相应的 css文件，在Jekyll工程目录下执行；</p>
+
+<pre>
+pygmentize -S default -f html > css/pygments.css
+</pre>
+
+
+<p>即：使用缺省的配色方案，将生成的文件 pygments.css 存放在 css 目录下。</p>
+
+<p>同时，还需要修改 layout 目录下的 default.html ，在 head 标签内部增加一行</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/css/pygments.css&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+
+<h2>3.4 配置 _config.yaml文件</h2>
+
+<p>在 _config.yaml 文件中增加</p>
+
+<pre>
+pygments: true 
+</pre>
+
+
+<p>表示生成Blog页面时，需要使用到Pygments</p>
+
+<h2>3.5 使用</h2>
+
+<p>在 Blog 文件中将代码写在 highlight 和 endhighlight 之间，如：</p>
+
+<pre>
+{ % highlight html %}
+在这里写HTML代码片段
+{ % endhighlight %}
+</pre>
+
+
+<p>注意：使用时需要删除 { 和 % 之间的空格。</p>
+
+<p>除了html之外，还可以支持其它的语言，如: bash, java, python 等，参考：<a href="http://pygments.org/docs/lexers/">Available lexers</a></p>
+
+<h1>4. 启动 Jekyll</h1>
+
+<p>在 bash 窗口下执行以下命令启动Jekyll</p>
+
+<pre>
+jekyll --server 
+</pre>
+
+
+<p>如果启动时报错：</p>
+
+<pre>
+jekyll invalid byte sequence in GBK
+</pre>
+
+
+<p>则需要修改 .bashrc 文件， 添加以下内容</p>
+
+<pre>
+export LANG=en_US.UTF-8
+</pre>
+
+
+<h1>5. 参考资料</h1>
+
+<h2>5.1 安装参考</h2>
+
+<ul>
+<li><a href="https://github.com/oneclick/rubyinstaller/wiki/Development-Kit">Development Kit</a></li>
+<li><a href="http://taberh.me/2011/12/26/use-Jekyll-build-Blog-on-Github.html">使用Jekyll在Github上搭建博客</a></li>
+<li><a href="http://www.soimort.org/tech-blog/2011/11/19/introduction-to-jekyll_zh.html">像黑客一样写博客——Jekyll入门</a></li>
+<li><a href="http://bradleygrainger.com/2011/09/07/how-to-use-github-pages-on-windows.html">How to use GitHub Pages on Windows</a></li>
+<li><a href="https://help.github.com/articles/using-jekyll-with-pages">Using Jekyll with Pages</a></li>
+<li><a href="http://recursive-design.com/blog/2010/10/12/static-blogging-the-jekyll-way/">Static blogging the Jekyll way</a></li>
+<li><a href="http://www.stehem.net/2012/02/14/how-to-get-pygments-to-work-with-jekyll.html">How to get Pygments to work with Jekyll</a></li>
+</ul>
+
+
+<h2>5.2 写作时参考</h2>
+
+<p>可以使用<a href="http://markdownpad.com/download/">MarkdownPad</a>来编写文本</p>
+
+<ul>
+<li><a href="http://www.yaml.org">YMAL语法</a> , <a href="http://www.yaml.org/spec/1.2/spec.html">V1.2版本</a></li>
+<li><a href="http://daringfireball.net/projects/markdown/syntax">Markdown: Syntax</a></li>
+<li><a href="http://wowubuntu.com/markdown/">Markdown语法说明</a></li>
+<li><a href="http://pygments.org/docs/lexers/">Available lexers</a></li>
+</ul>
+
+
+			</article>
+            
+            <div class="post-copyright">
+                
+                    <p>声明: 本文采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" title="知识共享署名-非商业性使用-相同方式共享">CC BY-NC-SA 3.0</a> 协议进行授权. 转载请注明转自: <a href="/2012/08/30/install-jekyll-on-windows.html" title="在Windows下安装Jekyll" rel="nofollow">在Windows下安装Jekyll</a></p>
+                
+            </div>
+            
+            <nav class="pagination-link">
+                
+                
+                <a class="next" href="/2013/01/18/Android_env.html" rel="bookmark">Android开发环境搭建&nbsp;&raquo;</a>
+                
+            </nav>
+            <!-- codes for display Disqus -->
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = 'fht';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</div>
+		<div class="aside fn-clear">
+			<gcse:searchbox-only></gcse:searchbox-only>
+			<div class="box fn-clear">
+	<h3 class="title">Recent Articles</h3>
+    <ul>
+       
+        <li>
+            <a href="/2013/01/20/dusahubiji_1.html" title="读书笔记" rel="bookmark">读书笔记</a>
+        </li>                                   
+       
+        <li>
+            <a href="/2013/01/18/First-Blog.html" title="开博了！" rel="bookmark">开博了！</a>
+        </li>                                   
+       
+        <li>
+            <a href="/2013/01/18/Android_env.html" title="Android开发环境搭建" rel="bookmark">Android开发环境搭建</a>
+        </li>                                   
+    
+    </ul>
+</div>
+
+		</div>
+	</div>
+</section>
+
+        </article>
+    </section>
+    <footer class="foot">
+	<div class="foot-btn">
+		<div class="foot-btn-det">
+			<p class="copyright">Copyright © 2011–2012, Liu Dongfang, All rights reserved.</p>
+            <p class="author">Comments powered by <a href="http://disqus.com">Disqus</a>.</p>
+            <p class="author">Powered by <a href="http://www.jekyllrb.com">Jekyll</a>&nbsp&nbsp</p>
+		</div>
+	</div>
+</footer>
+
+    
+        <a class="fork-me" href="http://github.com/liudongfang" target="_blank" rel="nofollow">
+            <img src="/images/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+        </a>
+    
+</body>
+</html>

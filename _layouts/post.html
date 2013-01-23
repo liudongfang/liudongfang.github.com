@@ -1,0 +1,59 @@
+---
+layout: default
+---
+<section class="content">
+	<div class="content-cnt fn-clear">
+		<div class="main fn-clear">
+			<article class="entry">
+				<h1 class="title">{{ page.title }}</h1>
+               	<p class="meta">
+                    <time class="date" pubdate="{{ page.date | date_to_utc | date: '%Y-%m-%d' }}">{{ page.date | date_to_string }}</time> By
+                    {% if page.author %}
+                        {{ page.author }}
+                    {% else %}
+                        <a href="/contact.html" class="author" title="author">{{ site.author.name }}</a>
+                    {% endif %}
+                    <g:plusone size="small"></g:plusone>
+                </p>
+               	<p class="description">{{ page.description }}</p>
+ 			 	{{ content }}
+			</article>
+            {% if page.copyright %}
+            <div class="post-copyright">
+                {% if page.copyright == "cn" %}
+                    {% include post-copyright-content-cn.html %}
+                {% elsif page.copyright == "en" %}
+                    {% include post-copyright-content-en.html %}
+                {% elsif page.copyright == "book-cn" %}
+                    {% include post-copyright-book-cn.html %}
+                {% elsif page.copyright == "book-en" %}
+                    {% include post-copyright-book-en.html %}
+                {% endif %}
+            </div>
+            {% endif %}
+            <nav class="pagination-link">
+                {% if page.previous %}
+                <a class="prev" href="{{ page.previous.url }}" rel="bookmark">&laquo;&nbsp;{{ page.previous.title | truncatewords:5 }}</a>
+                {% endif %}
+                {% if page.next %}
+                <a class="next" href="{{ page.next.url }}" rel="bookmark">{{ page.next.title | truncatewords:5 }}&nbsp;&raquo;</a>
+                {% endif %}
+            </nav>
+            <!-- codes for display Disqus -->
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = 'fht';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</div>
+		<div class="aside fn-clear">
+			{% include google_custom_search.html %}
+			{% include recent_articles.html %}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+   <title>DongFang's Blog</title>
+   <link href="/atom.xml" rel="self" type="application/atom+xml"/>
+   <link href="" rel="alternate" type="text/html" />
+   <updated>2013-01-23T01:18:52+08:00</updated>
+   <id></id>
+   <author>
+     <name>Liu Dongfang</name>
+     <email>qixi.liudongfang@gmail.com</email>
+   </author>
+
+   
+   <entry>
+     <title>读书笔记</title>
+     <link href="/2013/01/20/dusahubiji_1.html"/>
+     <updated>2013-01-20T00:00:00+08:00</updated>
+     <id>/2013/01/20/dusahubiji_1</id>
+     <content type="html">&lt;p&gt;从今天开始拜读Android大牛Reto Meier的大作《Professional Android Application Development》。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;学习到71页，理解android应用程序的权限和进程状态。   2013-1-13  1:18&lt;/li&gt;
+&lt;/ol&gt;
+
+</content>
+   </entry>
+   
+   <entry>
+     <title>开博了！</title>
+     <link href="/2013/01/18/First-Blog.html"/>
+     <updated>2013-01-18T00:00:00+08:00</updated>
+     <id>/2013/01/18/First-Blog</id>
+     <content type="html">&lt;p&gt;纪念一下，终于开通博客了，记录我自己的程序人生.&lt;/p&gt;
+</content>
+   </entry>
+   
+   <entry>
+     <title>Android开发环境搭建</title>
+     <link href="/2013/01/18/Android_env.html"/>
+     <updated>2013-01-18T00:00:00+08:00</updated>
+     <id>/2013/01/18/Android_env</id>
+     <content type="html">&lt;h1&gt;1. 环境搭建前的准备&lt;/h1&gt;
+
+&lt;p&gt;  搭建整个Android开发环境需要安装如下软件：JDK，Eclipse，Android SDK和ADT。&lt;br/&gt;
+  JDK：要求JDK 1.5+，建议JDK6.x&lt;/p&gt;
+
+&lt;p&gt;  下载地址:http://www.oracle.com/technetwork/java/javase/downloads/index.html&lt;/p&gt;
+
+&lt;p&gt;  Eclipse：Eclipse 3.4(Ganymede) or 3.5(Galieo)&lt;/p&gt;
+
+&lt;p&gt;  下载地址：http://www.eclipse.org/downloads 建议下载版本Eclipse IDE for Java Developers&lt;/p&gt;
+
+&lt;p&gt;  Android SDK:准确的说下载的不是SDK而是SDK的下载安装器，因为下载下来的并没有SDK，而是需要连接到官方网站下载所需要的SDK。&lt;/p&gt;
+
+&lt;p&gt;  下载地址：http://developer.android.com/sdk/index.html,选择windows平台进行下载。&lt;/p&gt;
+
+&lt;p&gt;  ADT：这是eclipse的一个插件，是在线安装的，下文会有介绍。&lt;/p&gt;
+
+&lt;p&gt;  所以，在搭建Android开发环境之前，需要确保已经下载了上述的安装包或者对应的软件已经安装了。&lt;/p&gt;
+
+&lt;h1&gt;2. 环境的搭建&lt;/h1&gt;
+
+&lt;h2&gt;2.1. JDK安装&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt; 如果电脑中没有JDK的话，就安装已下载的安装包，安装时根据提示一步一步就行，设置环境变量步骤如下：
+ 1、我的电脑-&amp;gt;属性-&amp;gt;高级-&amp;gt;环境变量-&amp;gt;系统变量中添加如下环境变量
+ 2、JDK_HOME值为：C:\Program Files\Java\jdk1.7.0_10（JDK的安装目录）
+ 3、CLASSPATH值为：.;%JAVA_HOME%\lib\tools.jar;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\bin;
+ 4、Path：在开始追加%JAVA_HOME%\bin;
+     完成安装后，可以检查JDK是否安装成功。 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;2.2  Eclipse安装&lt;/h2&gt;
+
+&lt;p&gt;   解压安装包即可使用。&lt;/p&gt;
+
+&lt;h2&gt;2.3 Android SDK安装&lt;/h2&gt;
+
+&lt;p&gt;   将下载的android_sdk_r18_windows.zip加压到任意路径（为了方便，尽量解压到eclipse所在目录）。
+   运行SDK Setup.exe，如果网速好的话，可以把所有的Android版本都下载，另外最好将Tools和Extras也装上。
+   如果有访问互联网的限制的话，可以直接从已经搭建过环境的同事那拷贝其SDK目录即可。对应的Android的版本在/platforms目录下。
+   注意目录/add-ons和extras。&lt;/p&gt;
+
+&lt;p&gt;   设置SDK的路径，选择Windows-&gt;preferences，在打开的属性框，选择Android，在SDK location中输入你的Android SDK 所在的目录，
+   然后按Apply按钮，即可看到安装的SDK包。&lt;/p&gt;
+
+&lt;h2&gt;2.4  ADT安装&lt;/h2&gt;
+
+&lt;h3&gt;2.4.1 自动安装&lt;/h3&gt;
+
+&lt;p&gt;   启动Eclipse，选择菜单Help-&gt;Install New Software  --&gt;选择选项卡的 Avaible Software，点击右侧按钮“Add”，
+   输入https://dl-ssl.google.com/android/eclipse/,如果不支持https，可以选择http://dl-ssl.google.com/android/eclipse/
+   选择所有安装包，然后Next安装向导进行下载并安装，安装完成之后，重启Eclipse。&lt;/p&gt;
+
+&lt;h3&gt;2.4.2 手动安装&lt;/h3&gt;
+
+&lt;p&gt;   也可以使用下载的方式安装，在网络条件不允许的情况下，可以考本其他人的ADT安装。
+   下载网站：http://dl.google.com/android/ADT-0.9.7.zip（最新网址参考http://androidappdocs.appspot.com/sdk/eclipse-adt.html）&lt;/p&gt;
+
+&lt;h1&gt;3.测试Android程序的运行&lt;/h1&gt;
+
+&lt;p&gt;以最经典的例子Hello World作为测试。&lt;/p&gt;
+</content>
+   </entry>
+   
+   <entry>
+     <title>在Windows下安装Jekyll</title>
+     <link href="/2012/08/30/install-jekyll-on-windows.html"/>
+     <updated>2012-08-30T00:00:00+08:00</updated>
+     <id>/2012/08/30/install-jekyll-on-windows</id>
+     <content type="html">&lt;h1&gt;1. 安装Ruby&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;从 &lt;a href=&quot;http://rubyinstaller.org/downloads/&quot;&gt;http://rubyinstaller.org/downloads/&lt;/a&gt; 下载最新的Ruby版本： &lt;a href=&quot;http://files.rubyforge.vm.bytemark.co.uk/rubyinstaller/rubyinstaller-1.9.3-p194.exe&quot;&gt;rubyinstaller-1.9.3-p194.exe&lt;/a&gt;
+和 &lt;a href=&quot;https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe&quot;&gt;DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;执行 rubyinstaller-1.9.3-p194.exe， 假设安装在 c:\ruby193 目录， 安装时需要选择&quot;Add Ruby executables to your PATH&quot;&lt;/li&gt;
+&lt;li&gt;执行 DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe， 设置解压目录为 c:\RubyDevKit&lt;/li&gt;
+&lt;li&gt;进入 c:\RubyDevKit 目录，执行 ruby dk.rb init 和 ruby dk.rb install&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h1&gt;2. 安装Jekyll&lt;/h1&gt;
+
+&lt;p&gt;在bash窗口下执行&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;gem install jekyll -v 0.11.0
+gem install liquid -v 2.2.2
+gem install rdiscount kramdown
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;然后就可以开始我们的Jekyll之旅了。&lt;/p&gt;
+
+&lt;p&gt;注意：Jekyll 和 都必须安装和 github 一样的版本，否则可能出现本地可以正常显示，但上传到 github 上后，github不更新的情况。&lt;/p&gt;
+
+&lt;p&gt;我就遇到过一次，在咨询 github 工作人员后才知道这一点。&lt;/p&gt;
+
+&lt;p&gt;上面命令中的版本是我写本文时 github 所使用的版本。github所使用的版本情况可以在 &lt;a href=&quot;https://help.github.com/articles/using-jekyll-with-pages&quot;&gt;Using Jekyll with Pages&lt;/a&gt; 中查看。&lt;/p&gt;
+
+&lt;p&gt;通过 &lt;code&gt;gem list&lt;/code&gt; 查看本地安装的版本，如果已经安装了其它版本的 jekyll 或 liquid, 可以通过如下命令删除&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;gem uninstall jekyll
+gem uninstall liquid
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;删除时，可以通过 -v 参数指定所要删除的版本号。&lt;/p&gt;
+
+&lt;p&gt;如果不删除，会出现诸如&lt;/p&gt;
+
+&lt;pre&gt;
+ Liquid error: undefined method `join' for ...
+&lt;/pre&gt;
+
+
+&lt;p&gt;这样的错误。&lt;/p&gt;
+
+&lt;h1&gt;3. 安装 Pygments&lt;/h1&gt;
+
+&lt;p&gt;安装 Pygments 是为了在Blog中能够实现代码高亮。如果不需要在Blog中写代码片段，可以不用安装 Pygments, 跳过本章节。&lt;/p&gt;
+
+&lt;h2&gt;3.1 安装&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;安装Python: 从 &lt;a href=&quot;http://www.python.org/getit/&quot;&gt;Phthon网站&lt;/a&gt;下载并安装 &lt;a href=&quot;http://www.python.org/ftp/python/2.7.3/python-2.7.3.msi&quot;&gt;python-2.7.3.msi&lt;/a&gt; （或更高版本的 python-2.x.x）, 假设安装在 c:\Python27 目录&lt;/li&gt;
+&lt;li&gt;安装easy_install: 从&lt;a href=&quot;http://pypi.python.org/pypi&quot;&gt;http://pypi.python.org/pypi&lt;/a&gt;下载并安装 &lt;a href=&quot;http://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11.win32-py2.7.exe#md5=57e1e64f6b7c7f1d2eddfc9746bbaf20&quot;&gt;setuptools-0.6c11.win32-py2.7.exe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;安装 Pygments: 执行下命令&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bat&quot;&gt;&lt;span class=&quot;k&quot;&gt;cd&lt;/span&gt; c:\Python&lt;span class=&quot;m&quot;&gt;27&lt;/span&gt;\Scripts\
+easy_install Pygments
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;最后再将 c:\Python27\Scripts\ 添加到环境变量 PATH 中。&lt;/p&gt;
+
+&lt;h2&gt;3.2. 打补丁&lt;/h2&gt;
+
+&lt;p&gt;参考下面的链接为Ruby打补丁，防止出现“Liquid error: bad file descriptor”错误。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://gist.github.com/1185645&quot;&gt;https://gist.github.com/1185645&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;也可以直接下载我修改后的文件 &lt;a href=&quot;/attachments/albino.rb&quot;&gt;albino.rb&lt;/a&gt; 。注意：使用“另存为”来下载。&lt;/p&gt;
+
+&lt;h2&gt;3.3 生成 css 文件&lt;/h2&gt;
+
+&lt;p&gt;为了在博客中使用Pygments， 还需要生成相应的 css文件，在Jekyll工程目录下执行；&lt;/p&gt;
+
+&lt;pre&gt;
+pygmentize -S default -f html &gt; css/pygments.css
+&lt;/pre&gt;
+
+
+&lt;p&gt;即：使用缺省的配色方案，将生成的文件 pygments.css 存放在 css 目录下。&lt;/p&gt;
+
+&lt;p&gt;同时，还需要修改 layout 目录下的 default.html ，在 head 标签内部增加一行&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/css/pygments.css&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/css&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;3.4 配置 _config.yaml文件&lt;/h2&gt;
+
+&lt;p&gt;在 _config.yaml 文件中增加&lt;/p&gt;
+
+&lt;pre&gt;
+pygments: true 
+&lt;/pre&gt;
+
+
+&lt;p&gt;表示生成Blog页面时，需要使用到Pygments&lt;/p&gt;
+
+&lt;h2&gt;3.5 使用&lt;/h2&gt;
+
+&lt;p&gt;在 Blog 文件中将代码写在 highlight 和 endhighlight 之间，如：&lt;/p&gt;
+
+&lt;pre&gt;
+{ % highlight html %}
+在这里写HTML代码片段
+{ % endhighlight %}
+&lt;/pre&gt;
+
+
+&lt;p&gt;注意：使用时需要删除 { 和 % 之间的空格。&lt;/p&gt;
+
+&lt;p&gt;除了html之外，还可以支持其它的语言，如: bash, java, python 等，参考：&lt;a href=&quot;http://pygments.org/docs/lexers/&quot;&gt;Available lexers&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1&gt;4. 启动 Jekyll&lt;/h1&gt;
+
+&lt;p&gt;在 bash 窗口下执行以下命令启动Jekyll&lt;/p&gt;
+
+&lt;pre&gt;
+jekyll --server 
+&lt;/pre&gt;
+
+
+&lt;p&gt;如果启动时报错：&lt;/p&gt;
+
+&lt;pre&gt;
+jekyll invalid byte sequence in GBK
+&lt;/pre&gt;
+
+
+&lt;p&gt;则需要修改 .bashrc 文件， 添加以下内容&lt;/p&gt;
+
+&lt;pre&gt;
+export LANG=en_US.UTF-8
+&lt;/pre&gt;
+
+
+&lt;h1&gt;5. 参考资料&lt;/h1&gt;
+
+&lt;h2&gt;5.1 安装参考&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/oneclick/rubyinstaller/wiki/Development-Kit&quot;&gt;Development Kit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://taberh.me/2011/12/26/use-Jekyll-build-Blog-on-Github.html&quot;&gt;使用Jekyll在Github上搭建博客&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.soimort.org/tech-blog/2011/11/19/introduction-to-jekyll_zh.html&quot;&gt;像黑客一样写博客——Jekyll入门&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://bradleygrainger.com/2011/09/07/how-to-use-github-pages-on-windows.html&quot;&gt;How to use GitHub Pages on Windows&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/using-jekyll-with-pages&quot;&gt;Using Jekyll with Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://recursive-design.com/blog/2010/10/12/static-blogging-the-jekyll-way/&quot;&gt;Static blogging the Jekyll way&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.stehem.net/2012/02/14/how-to-get-pygments-to-work-with-jekyll.html&quot;&gt;How to get Pygments to work with Jekyll&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;5.2 写作时参考&lt;/h2&gt;
+
+&lt;p&gt;可以使用&lt;a href=&quot;http://markdownpad.com/download/&quot;&gt;MarkdownPad&lt;/a&gt;来编写文本&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.yaml.org&quot;&gt;YMAL语法&lt;/a&gt; , &lt;a href=&quot;http://www.yaml.org/spec/1.2/spec.html&quot;&gt;V1.2版本&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown: Syntax&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://wowubuntu.com/markdown/&quot;&gt;Markdown语法说明&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://pygments.org/docs/lexers/&quot;&gt;Available lexers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+   </entry>
+   
+ 
+</feed>
