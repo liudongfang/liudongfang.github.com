@@ -4,7 +4,7 @@
    <title>DongFang's Blog</title>
    <link href="/atom.xml" rel="self" type="application/atom+xml"/>
    <link href="" rel="alternate" type="text/html" />
-   <updated>2013-01-23T01:18:52+08:00</updated>
+   <updated>2013-01-23T21:34:27+08:00</updated>
    <id></id>
    <author>
      <name>Liu Dongfang</name>
@@ -63,13 +63,12 @@
 
 &lt;h2&gt;2.1. JDK安装&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt; 如果电脑中没有JDK的话，就安装已下载的安装包，安装时根据提示一步一步就行，设置环境变量步骤如下：
- 1、我的电脑-&amp;gt;属性-&amp;gt;高级-&amp;gt;环境变量-&amp;gt;系统变量中添加如下环境变量
- 2、JDK_HOME值为：C:\Program Files\Java\jdk1.7.0_10（JDK的安装目录）
- 3、CLASSPATH值为：.;%JAVA_HOME%\lib\tools.jar;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\bin;
- 4、Path：在开始追加%JAVA_HOME%\bin;
-     完成安装后，可以检查JDK是否安装成功。 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;果电脑中没有JDK的话，就安装已下载的安装包，安装时根据提示一步一步就行，设置环境变量步骤如下：
+1、我的电脑-&gt;属性-&gt;高级-&gt;环境变量-&gt;系统变量中添加如下环境变量
+2、JDK_HOME值为：C:\Program Files\Java\jdk1.7.0_10（JDK的安装目录）
+3、CLASSPATH值为：.;%JAVA_HOME%\lib\tools.jar;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\bin;
+4、Path：在开始追加%JAVA_HOME%\bin;
+完成安装后，可以检查JDK是否安装成功。&lt;/p&gt;
 
 &lt;h2&gt;2.2  Eclipse安装&lt;/h2&gt;
 

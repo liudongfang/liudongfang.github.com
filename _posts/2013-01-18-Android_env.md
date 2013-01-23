@@ -27,12 +27,14 @@ copyright: cn
 # 2. 环境的搭建
 
 ## 2.1. JDK安装
-	 如果电脑中没有JDK的话，就安装已下载的安装包，安装时根据提示一步一步就行，设置环境变量步骤如下：
-	 1、我的电脑->属性->高级->环境变量->系统变量中添加如下环境变量
-	 2、JDK_HOME值为：C:\Program Files\Java\jdk1.7.0_10（JDK的安装目录）
-	 3、CLASSPATH值为：.;%JAVA_HOME%\lib\tools.jar;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\bin;
-	 4、Path：在开始追加%JAVA_HOME%\bin;
-	 	 完成安装后，可以检查JDK是否安装成功。 
+
+
+果电脑中没有JDK的话，就安装已下载的安装包，安装时根据提示一步一步就行，设置环境变量步骤如下：
+1、我的电脑->属性->高级->环境变量->系统变量中添加如下环境变量
+2、JDK_HOME值为：C:\Program Files\Java\jdk1.7.0_10（JDK的安装目录）
+3、CLASSPATH值为：.;%JAVA_HOME%\lib\tools.jar;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\bin;
+4、Path：在开始追加%JAVA_HOME%\bin;
+完成安装后，可以检查JDK是否安装成功。 
 	 
 ## 2.2  Eclipse安装
    解压安装包即可使用。
